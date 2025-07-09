@@ -24,7 +24,7 @@ export default function Experience(){
                         <div><h1 className="text-sm text-primary/70">Oct 2024 - Apr 2025 </h1></div>
                     </div>
                     <span className="text-sm font-normal text-primary/70">Fullstack Developer Intern</span>
-                    <div className="mt-3 p-3 bg-muted/50 rounded-lg border-l-4 border-primary/20">
+                    <div className="mt-3 p-3 bg-gradient-to-r from-amber-50/50 to-orange-50/50 dark:from-amber-900/10 dark:to-orange-900/10 rounded-lg border-l-4 border-amber-400/30">
                         <p className="text-sm text-primary/80 leading-relaxed">
                             Developed web application using <span className="font-medium text-primary">.NET Web API</span> for backend services and <span className="font-medium text-primary">React.js</span> for frontend development.
                         </p>
