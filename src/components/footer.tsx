@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const [visit, setVisit] = useState<number | "Loading">("Loading");
+  const [visit, setVisit] = useState<number | "Loading...">("Loading...");
   useEffect(() => {
     async function increaseVisitors() {
       const response = await axios.get("/api/visit");

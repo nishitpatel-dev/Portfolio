@@ -4,35 +4,33 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const db = new PrismaClient();
   try {
-    const data = await db.siteAnalytics.findUnique({
+    // Use upsert to handle both create and update cases
+    const result = await db.siteAnalytics.upsert({
       where: {
         siteName: "portfolio",
       },
-    });
-
-    const vists = data?.visitors;
-
-    const newVisitCount = vists! + BigInt(1);
-    
-    await db.siteAnalytics.update({
-      where: {
+      update: {
+        visitors: {
+          increment: 1
+        }
+      },
+      create: {
         siteName: "portfolio",
-      },
-      data: {
-        visitors: newVisitCount,
-      },
+        visitors: 1
+      }
     });
 
     return NextResponse.json({ 
       success: true, 
-      visitor: newVisitCount.toString() 
+      visitor: result.visitors 
     });
-  }catch (e: any) {
+  } catch (e: any) {
+    console.error('Error in visit route:', e);
     return NextResponse.json({
       success: false,
-      message:`${e}`
+      message: "Error processing visit count"
     });
   } finally {
-    db.$disconnect();
+    await db.$disconnect();
   }
 }
