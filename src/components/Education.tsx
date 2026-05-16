@@ -1,5 +1,6 @@
 import { Bricolage_Grotesque } from "next/font/google";
 import Image from "next/image";
+import Reveal from "./reveal";
 
 
 const font = Bricolage_Grotesque({
@@ -10,8 +11,11 @@ const font = Bricolage_Grotesque({
 export default function Education(){
     return(
         <div className="flex flex-col items-center p-5 mt-5 w-full">
-            <h1 className={`${font.className} font-semibold text-3xl`}>Education</h1>
-            <div className="flex w-full items-start gap-5 mt-5">
+            <Reveal>
+                <h1 className={`${font.className} font-semibold text-3xl`}>Education</h1>
+            </Reveal>
+            <Reveal className="w-full" delayMs={120}>
+                <div className="flex w-full items-start gap-5 mt-5">
                 <div className="pt-1">
                     <Image src={"/vnsgu.png"} width={50} height={50} alt="VNSGU LOGO" className="rounded-full"/>
                 </div>
@@ -41,8 +45,10 @@ export default function Education(){
                         <p className="text-xs text-primary/60">June 2021 - June 2024</p>
                     </div>
                 </div>
-            </div>
-            <div className="flex w-full items-start gap-5 mt-5">
+                </div>
+            </Reveal>
+            <Reveal className="w-full" delayMs={200}>
+                <div className="flex w-full items-start gap-5 mt-5">
                 <div className="pt-1">
                     <Image src={"/school.jpg"} width={50} height={50} alt="School LOGO" className=""/>
                 </div>
@@ -75,7 +81,8 @@ export default function Education(){
                         <p className="text-xs text-primary/60">March 2019</p>
                     </div>
                 </div>
-            </div>
+                </div>
+            </Reveal>
         </div>
     )
 }

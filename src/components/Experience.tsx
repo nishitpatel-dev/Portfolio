@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { Award } from "lucide-react";
+import Reveal from "./reveal";
 
 
 const font = Bricolage_Grotesque({
@@ -13,8 +14,11 @@ const font = Bricolage_Grotesque({
 export default function Experience(){
     return(
         <div className="flex flex-col items-center p-5 mt-10 w-full">
-            <h1 className={`${font.className} font-semibold text-3xl`}>Experience</h1>
-            <div className="flex w-full items-center gap-5 mt-5">
+            <Reveal>
+                <h1 className={`${font.className} font-semibold text-3xl`}>Experience</h1>
+            </Reveal>
+            <Reveal className="w-full" delayMs={120}>
+                <div className="flex w-full items-center gap-5 mt-5">
                 <div>
                     <Image src={"/owy.png"} width={50} height={50} alt="OWY Technosys Pvt. Ltd. Logo" className="rounded-full"/>
                 </div>
@@ -38,7 +42,8 @@ export default function Experience(){
                         </Link>
                     </div>
                 </div>
-            </div>
+                </div>
+            </Reveal>
         </div>
     )
 }

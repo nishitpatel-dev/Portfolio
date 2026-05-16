@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Bricolage_Grotesque } from "next/font/google";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { ModeToggle } from "./mode-toggle";
+import Reveal from "./reveal";
 
 const font = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -14,16 +14,27 @@ const font = Bricolage_Grotesque({
 export default function HeroSection() {
   return (
     <div className="pt-12 w-full flex flex-col md:flex-row gap-6 md:gap-8 md:justify-between md:items-center relative">
-      <div className="flex justify-center md:hidden">
-        <Image
-          src="/FinalMe.png"
-          height={120}
-          width={120}
-          alt="Nishit Profile Pic"
-          className="rounded-full border shadow-xl"
-        />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div className="absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/20 blur-3xl" />
+        <div className="absolute -bottom-24 right-10 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl" />
       </div>
-      <div className="text-center md:text-left px-4 md:px-0 max-w-2xl">
+
+      <Reveal className="flex justify-center md:hidden" delayMs={150}>
+        <div className="relative">
+          <Image
+            src="/FinalMe.png"
+            height={120}
+            width={120}
+            alt="Nishit Profile Pic"
+            className="relative rounded-full border border-white/10 shadow-xl"
+          />
+        </div>
+      </Reveal>
+
+      <Reveal className="text-center md:text-left px-4 md:px-0 max-w-2xl" delayMs={0}>
         <h1 className={`text-2xl md:text-3xl font-medium`}>Hey there,</h1>
         <h1 className={`text-4xl md:text-5xl font-semibold`}>
           I&apos;m{" "}
@@ -35,7 +46,10 @@ export default function HeroSection() {
           An independent and self-motivated hardworking individual dedicated
           towards goals.
         </p>
-        <div className="flex flex-wrap gap-3 mt-2 justify-center md:justify-start items-center">
+        <Reveal
+          className="flex flex-wrap gap-3 mt-2 justify-center md:justify-start items-center"
+          delayMs={150}
+        >
           <Link href="mailto:nishitpatel.dev@gmail.com">
             <RainbowButton>
               <Mail className="mr-2 h-4 w-4" /> Get in touch
@@ -52,10 +66,13 @@ export default function HeroSection() {
               My Resume
             </RainbowButton>
           </Link>
-        </div>
-        <div className="flex flex-wrap gap-3 mt-3 justify-center md:justify-start items-center">
+        </Reveal>
+        <Reveal
+          className="flex flex-wrap gap-3 mt-3 justify-center md:justify-start items-center"
+          delayMs={250}
+        >
           <Link href={"https://x.com/iam_nishitp"} target="_blank">
-            <div className="border p-2 rounded-full shadow-sm">
+            <div className="border p-2 rounded-full shadow-sm transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -69,7 +86,7 @@ export default function HeroSection() {
             </div>
           </Link>
           <Link href={"https://leetcode.com/u/Nishit27/"} target="_blank">
-            <div className="border p-2 rounded-full shadow-sm">
+            <div className="border p-2 rounded-full shadow-sm transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -82,7 +99,7 @@ export default function HeroSection() {
             </div>
           </Link>
           <Link href="https://github.com/nishitpatel-dev" target="_blank">
-            <div className="border p-2 rounded-full shadow-sm">
+            <div className="border p-2 rounded-full shadow-sm transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md">
               <GithubIcon size={15} />
             </div>
           </Link>
@@ -90,21 +107,24 @@ export default function HeroSection() {
             href={"https://www.linkedin.com/in/nishitpatel-dev/"}
             target="_blank"
           >
-            <div className="border p-2 rounded-full shadow-sm">
+            <div className="border p-2 rounded-full shadow-sm transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md">
               <Linkedin size={15} />
             </div>
           </Link>
+        </Reveal>
+      </Reveal>
+
+      <Reveal className="hidden h-full md:block" delayMs={200}>
+        <div className="relative">
+          <Image
+            src={"/FinalMe.png"}
+            height={280}
+            width={280}
+            alt="Nishit's image"
+            className="relative rounded-full border border-white/10 shadow-xl"
+          />
         </div>
-      </div>
-      <div className="hidden h-full md:block">
-        <Image
-          src={"/FinalMe.png"}
-          height={500}
-          width={500}
-          alt="Nishit's image"
-          className="rounded-full border shadow-xl"
-        />
-      </div>
+      </Reveal>
     </div>
   );
 }

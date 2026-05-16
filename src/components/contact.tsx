@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import axios from "axios"
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import Reveal from "./reveal";
 
 const font = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -67,66 +68,68 @@ export default function Contact(){
              <hr className="my-10 w-1/2 mx-auto"/>
             <div className="w-full max-w-4xl">
                 {/* Header Section */}
-                <div className="text-center mb-8">
+                <Reveal className="text-center mb-8">
                     <h1 className={`${font.className} font-semibold text-3xl mb-3`}>Get In Touch</h1>
                     <p className="text-primary/70 text-sm max-w-md mx-auto">
                         Have a project in mind or just want to say hello? I'd love to hear from you!
                     </p>
-                </div>
+                </Reveal>
 
                 {/* Contact Form */}
-                <div className="bg-gradient-to-r from-slate-50/50 to-gray-50/50 dark:from-slate-900/20 dark:to-gray-900/20 rounded-xl border border-border/50 p-6 shadow-lg">
-                    <div className="space-y-6">
-                        {/* Email Input */}
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-primary/80">Your Email</label>
-                            <div className="relative mt-2">
-                                <Input 
-                                    ref={emailRef} 
-                                    placeholder="Enter your email address"
-                                    className="h-11 bg-background/50 border-border/50 focus:border-primary/50 transition-all duration-200"
-                                />
+                <Reveal delayMs={120}>
+                    <div className="bg-gradient-to-r from-slate-50/50 to-gray-50/50 dark:from-slate-900/20 dark:to-gray-900/20 rounded-xl border border-border/50 p-6 shadow-lg hover-lift">
+                        <div className="space-y-6">
+                            {/* Email Input */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-primary/80">Your Email</label>
+                                <div className="relative mt-2">
+                                    <Input 
+                                        ref={emailRef} 
+                                        placeholder="Enter your email address"
+                                        className="h-11 bg-background/50 border-border/50 focus:border-primary/50 transition-all duration-200"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Message Input */}
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-primary/80">Your Message</label>
-                            <div className="mt-2">
-                                <Textarea 
-                                    ref={messageRef} 
-                                    placeholder="Tell me about your project or just say hello..."
-                                    className="h-32 bg-background/50 border-border/50 focus:border-primary/50 transition-all duration-200 resize-none"
-                                />
+                            {/* Message Input */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-primary/80">Your Message</label>
+                                <div className="mt-2">
+                                    <Textarea 
+                                        ref={messageRef} 
+                                        placeholder="Tell me about your project or just say hello..."
+                                        className="h-32 bg-background/50 border-border/50 focus:border-primary/50 transition-all duration-200 resize-none"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Send Button */}
-                        <div className="pt-2">
-                            <RainbowButton 
-                                onClick={handleClick} 
-                                disabled={loading} 
-                                className="w-full h-11 text-sm font-medium"
-                            >
-                                {loading ? (
-                                    <div className="flex items-center justify-center gap-2">
-                                        <Loader2 className="animate-spin h-4 w-4"/>
-                                        Sending message...
-                                    </div>
-                                ) : (
-                                    "Send Message"
-                                )}
-                            </RainbowButton>
+                            {/* Send Button */}
+                            <div className="pt-2">
+                                <RainbowButton 
+                                    onClick={handleClick} 
+                                    disabled={loading} 
+                                    className="w-full h-11 text-sm font-medium"
+                                >
+                                    {loading ? (
+                                        <div className="flex items-center justify-center gap-2">
+                                            <Loader2 className="animate-spin h-4 w-4"/>
+                                            Sending message...
+                                        </div>
+                                    ) : (
+                                        "Send Message"
+                                    )}
+                                </RainbowButton>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Reveal>
 
                 {/* Footer Note */}
-                <div className="text-center mt-6">
+                <Reveal className="text-center mt-6" delayMs={200}>
                     <p className="text-xs text-primary/50">
                         I'll get back to you as soon as possible!
                     </p>
-                </div>
+                </Reveal>
             </div>
         </div>
     )
