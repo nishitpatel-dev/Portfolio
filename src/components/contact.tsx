@@ -64,19 +64,19 @@ export default function Contact(){
     }
     
     return(
-        <div className="flex flex-col items-center p-5 w-full">
-             <hr className="my-10 w-1/2 mx-auto"/>
-            <div className="w-full max-w-4xl">
-                {/* Header Section */}
-                <Reveal className="text-center mb-8">
-                    <h1 className={`${font.className} font-semibold text-3xl mb-3`}>Get In Touch</h1>
-                    <p className="text-primary/70 text-sm max-w-md mx-auto">
-                        Have a project in mind or just want to say hello? I'd love to hear from you!
-                    </p>
-                </Reveal>
+        <Reveal className="w-full">
+            <div className="flex flex-col items-center p-5 w-full">
+                <hr className="my-10 w-1/2 mx-auto"/>
+                <div className="w-full max-w-4xl">
+                    {/* Header Section */}
+                    <div className="text-center mb-8">
+                        <h1 className={`${font.className} font-semibold text-3xl mb-3`}>Get In Touch</h1>
+                        <p className="text-primary/70 text-sm max-w-md mx-auto">
+                            Have a project in mind or just want to say hello? I'd love to hear from you!
+                        </p>
+                    </div>
 
-                {/* Contact Form */}
-                <Reveal delayMs={120}>
+                    {/* Contact Form */}
                     <div className="bg-gradient-to-r from-slate-50/50 to-gray-50/50 dark:from-slate-900/20 dark:to-gray-900/20 rounded-xl border border-border/50 p-6 shadow-lg hover-lift">
                         <div className="space-y-6">
                             {/* Email Input */}
@@ -122,15 +122,15 @@ export default function Contact(){
                             </div>
                         </div>
                     </div>
-                </Reveal>
 
-                {/* Footer Note */}
-                <Reveal className="text-center mt-6" delayMs={200}>
-                    <p className="text-xs text-primary/50">
-                        I'll get back to you as soon as possible!
-                    </p>
-                </Reveal>
+                    {/* Footer Note */}
+                    <div className="text-center mt-6">
+                        <p className="text-xs text-primary/50">
+                            I'll get back to you as soon as possible!
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Reveal>
     )
 }

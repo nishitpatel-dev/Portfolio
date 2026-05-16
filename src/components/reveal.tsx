@@ -32,7 +32,7 @@ export default function Reveal({
           setIsVisible(false);
         }
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -15% 0px" }
     );
 
     observer.observe(node);
