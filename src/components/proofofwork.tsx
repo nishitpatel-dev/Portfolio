@@ -20,13 +20,15 @@ export default function ProofOfWork() {
   const displayedProjects = showAll ? Projects : Projects.slice(0, 2);
   
   return (
-    <Reveal className="w-full">
-      <MaxWidthContainer className="mt-8 flex flex-col items-center">
+    <MaxWidthContainer className="mt-8 flex flex-col items-center">
+      <Reveal>
         <h1 className={`${font.className} font-semibold text-3xl`}>Proof Of Work </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-2 p-2 hover:cursor-default">
-          {displayedProjects.map((e, index) => {
-            return (
-              <div key={index} className="group w-full border rounded-md overflow-hidden hover-lift">
+      </Reveal>
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-2 p-2 hover:cursor-default">
+        {displayedProjects.map((e, index) => {
+          return (
+            <Reveal key={index} delayMs={100 + index * 120}>
+              <div className="group w-full border rounded-md overflow-hidden hover-lift">
                 <div className="overflow-hidden m-2 border rounded-sm">
                   <Image 
                     src={`${e.image}`} 
@@ -54,19 +56,21 @@ export default function ProofOfWork() {
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
-        
-        {Projects.length > 2 && (
+            </Reveal>
+          );
+        })}
+      </div>
+      
+      {Projects.length > 2 && (
+        <Reveal delayMs={250}>
           <RainbowButton 
             className="w-max mt-5" 
             onClick={() => setShowAll(!showAll)}
           >
             {showAll ? "Show Less" : "More Projects"}
           </RainbowButton>
-        )}
-      </MaxWidthContainer>
-    </Reveal>
+        </Reveal>
+      )}
+    </MaxWidthContainer>
   );
 }

@@ -13,9 +13,11 @@ const font = Bricolage_Grotesque({
 
 export default function Experience(){
     return(
-        <Reveal className="w-full">
-            <div className="flex flex-col items-center p-5 mt-10 w-full">
+        <div className="flex flex-col items-center p-5 mt-10 w-full">
+            <Reveal>
                 <h1 className={`${font.className} font-semibold text-3xl`}>Experience</h1>
+            </Reveal>
+            <Reveal className="w-full" delayMs={120}>
                 <div className="flex w-full items-center gap-5 mt-5">
                     <div>
                         <Image src={"/owy.png"} width={50} height={50} alt="OWY Technosys Pvt. Ltd. Logo" className="rounded-full"/>
@@ -41,7 +43,7 @@ export default function Experience(){
                         </div>
                     </div>
                 </div>
-            </div>
-        </Reveal>
+            </Reveal>
+        </div>
     )
 }

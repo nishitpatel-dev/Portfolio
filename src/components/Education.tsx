@@ -10,9 +10,11 @@ const font = Bricolage_Grotesque({
 
 export default function Education(){
     return(
-        <Reveal className="w-full">
-            <div className="flex flex-col items-center p-5 mt-5 w-full">
+        <div className="flex flex-col items-center p-5 mt-5 w-full">
+            <Reveal>
                 <h1 className={`${font.className} font-semibold text-3xl`}>Education</h1>
+            </Reveal>
+            <Reveal className="w-full" delayMs={120}>
                 <div className="flex w-full items-start gap-5 mt-5">
                     <div className="pt-1">
                         <Image src={"/vnsgu.png"} width={50} height={50} alt="VNSGU LOGO" className="rounded-full"/>
@@ -44,6 +46,8 @@ export default function Education(){
                         </div>
                     </div>
                 </div>
+            </Reveal>
+            <Reveal className="w-full" delayMs={200}>
                 <div className="flex w-full items-start gap-5 mt-5">
                     <div className="pt-1">
                         <Image src={"/school.jpg"} width={50} height={50} alt="School LOGO" className=""/>
@@ -78,7 +82,7 @@ export default function Education(){
                         </div>
                     </div>
                 </div>
-            </div>
-        </Reveal>
+            </Reveal>
+        </div>
     )
 }
