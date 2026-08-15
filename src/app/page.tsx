@@ -5,11 +5,13 @@ import Footer from "@/components/footer";
 import HeroSection from "@/components/Hero";
 import MaxWidthContainer from "@/components/maxwidthcontainer";
 import ProofOfWork from "@/components/proofofwork";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
     <MaxWidthContainer>
       <HeroSection/>
+      <Skills/>
       <ProofOfWork/>
       <Experience/>
       <Education/>
