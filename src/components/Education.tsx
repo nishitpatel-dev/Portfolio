@@ -31,9 +31,9 @@ export default function Education(){
                         <div className="mb-4 p-3 bg-gradient-to-r from-cyan-50/50 to-blue-50/50 dark:from-cyan-900/10 dark:to-blue-900/10 rounded-lg border-l-4 border-cyan-400/30">
                             <div className="flex justify-between items-center mb-1">
                                 <span className="text-sm font-medium text-primary">M.Sc. (Information Technology)</span>
-                                <span className="text-xs text-primary/70 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">Pursuing</span>
+                                <span className="text-xs font-medium text-primary/60 bg-primary/5 px-2 py-1 rounded-md">CGPA: 7.34</span>
                             </div>
-                            <p className="text-xs text-primary/60">June 2024 - Present</p>
+                            <p className="text-xs text-primary/60">June 2024 - June 2026</p>
                         </div>
 
                         {/* B.Sc. Degree */}

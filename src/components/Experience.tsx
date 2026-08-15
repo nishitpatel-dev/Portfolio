@@ -20,6 +20,44 @@ export default function Experience(){
             <Reveal className="w-full" delayMs={120}>
                 <div className="flex w-full items-center gap-5 mt-5">
                     <div>
+                        <Image src={"/PropVivo.png"} width={50} height={50} alt="PropVivo Logo"/>
+                    </div>
+                    <div className="w-full">
+                        <div className="flex justify-between items-center">
+                            <div><h1 className="font-bold">PropVivo</h1></div>
+                            <div><h1 className="text-sm text-primary/70">Jul 2026 - Present </h1></div>
+                        </div>
+                        <span className="text-sm font-normal text-primary/70">Full Stack Developer</span>
+                        <div className="mt-3 p-3 bg-gradient-to-r from-violet-50/50 to-purple-50/50 dark:from-violet-900/10 dark:to-purple-900/10 rounded-lg border-l-4 border-violet-400/30">
+                            <p className="text-sm text-primary/80 leading-relaxed">
+                                Developing and enhancing web application features, contributing to <span className="font-medium text-primary">production releases</span> and <span className="font-medium text-primary">feature rollouts</span>, while handling feature enhancements, bug fixes, and application improvements across ongoing development and release cycles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </Reveal>
+            <Reveal className="w-full" delayMs={160}>
+                <div className="flex w-full items-center gap-5 mt-5">
+                    <div>
+                        <Image src={"/PropVivo.png"} width={50} height={50} alt="PropVivo Logo"/>
+                    </div>
+                    <div className="w-full">
+                        <div className="flex justify-between items-center">
+                            <div><h1 className="font-bold">PropVivo</h1></div>
+                            <div><h1 className="text-sm text-primary/70">Jul 2025 - Jun 2026 </h1></div>
+                        </div>
+                        <span className="text-sm font-normal text-primary/70">Full Stack Developer Intern</span>
+                        <div className="mt-3 p-3 bg-gradient-to-r from-blue-50/50 to-cyan-50/50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-lg border-l-4 border-blue-400/30">
+                            <p className="text-sm text-primary/80 leading-relaxed">
+                                Developed and enhanced web application features using <span className="font-medium text-primary">Next.js</span>, working with <span className="font-medium text-primary">GraphQL</span> for data integration and application workflows. Worked with <span className="font-medium text-primary">Microsoft SQL Server</span> and <span className="font-medium text-primary">Azure Cosmos DB</span>, including database schemas and stored procedures, with hands-on exposure to .NET backend development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </Reveal>
+            <Reveal className="w-full" delayMs={200}>
+                <div className="flex w-full items-center gap-5 mt-5">
+                    <div>
                         <Image src={"/owy.png"} width={50} height={50} alt="OWY Technosys Pvt. Ltd. Logo" className="rounded-full"/>
                     </div>
                     <div className="w-full">
