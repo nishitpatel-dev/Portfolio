@@ -37,6 +37,7 @@ export const skillRows: SkillRow[] = [
       { name: "Microsoft SQL Server", icon: `${DEVICON}/microsoftsqlserver/microsoftsqlserver-plain.svg` },
       { name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
       { name: "Azure Cosmos DB", icon: `${DEVICON}/azure/azure-original.svg` },
+      { name: "Redis", icon: `${DEVICON}/redis/redis-original.svg` },
       { name: "Prisma", icon: `${DEVICON}/prisma/prisma-original.svg` },
     ],
   },
